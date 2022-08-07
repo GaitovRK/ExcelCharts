@@ -33,10 +33,10 @@ class LineViewController: UIViewController, ChartViewDelegate {
             entries.append(BarChartDataEntry(x: Double(x), y: Double(x)))
         }
         
-        let set = BarChartDataSet(entries: entries)
+        let set = LineChartDataSet(entries: entries)
         set.colors = ChartColorTemplates.joyful()
         
-        let data = BarChartData(dataSet: set)
+        let data = LineChartData(dataSet: set)
         
         lineChart.data = data
         

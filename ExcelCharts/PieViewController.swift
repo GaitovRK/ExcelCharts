@@ -26,6 +26,23 @@ class PieViewController: UIViewController, ChartViewDelegate {
                                 width: self.view.frame.size.width,
                                 height: self.view.frame.size.width)
         pieChart.center = view.center
+        
+        var entries = [ChartDataEntry]()
+                
+        for x in 1...10 {
+            entries.append(ChartDataEntry(x: Double(x), y: Double(x)))
+        }
+        
+        entries.append(PieChartDataEntry(value: 25.0))
+        
+        let set = PieChartDataSet(entries: entries)
+        set.colors = ChartColorTemplates.joyful()
+        
+        let data = PieChartData(dataSet: set)
+        
+        pieChart.data = data
+
+        view.addSubview(pieChart)
     }
 
 }

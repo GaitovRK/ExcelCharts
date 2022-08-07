@@ -113,7 +113,7 @@
         <!--Pie Chart-->
         <scene sceneID="x9U-Dl-S5M">
             <objects>
-                <viewController id="dOc-up-4OJ" customClass="BarViewController" customModule="ExcelCharts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dOc-up-4OJ" customClass="PieViewController" customModule="ExcelCharts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bij-1E-j03">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
