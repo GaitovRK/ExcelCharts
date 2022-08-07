@@ -6,24 +6,40 @@
 //
 
 import UIKit
+import Charts
 
-class LineViewController: UIViewController {
+class LineViewController: UIViewController, ChartViewDelegate {
+    
+    var lineChart = LineChartView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        lineChart.delegate = self
+        
     }
-    
 
-    /*
-    // MARK: - Navigation
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        lineChart.frame = CGRect(x: 0, y: 0,
+                                width: self.view.frame.size.width,
+                                height: self.view.frame.size.width)
+        lineChart.center = view.center
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        var entries = [BarChartDataEntry]()
+        
+        for x in 1...10 {
+            entries.append(BarChartDataEntry(x: Double(x), y: Double(x)))
+        }
+        
+        let set = BarChartDataSet(entries: entries)
+        set.colors = ChartColorTemplates.joyful()
+        
+        let data = BarChartData(dataSet: set)
+        
+        lineChart.data = data
+        
+        view.addSubview(lineChart)
     }
-    */
-
 }
